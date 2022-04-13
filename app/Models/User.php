@@ -23,6 +23,10 @@ class User extends Authenticatable
         'password',
     ];
 
+    public function Sportsevents(){
+        return $this->hasMany(portsevent::class);
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *
