@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Athlet extends Model
 {
     use HasFactory;
+    public function categorie()
+    {
+        return $this->belongsto(Categorie::class);
+    }
 }

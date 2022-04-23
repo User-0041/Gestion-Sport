@@ -22,9 +22,7 @@ return new class extends Migration
             $table->date('dateDebut');
             $table->date('dateFin');
             $table->timestamps();
-            $table->forginId('user_id')->constrained->ondelet('cascade');
-
-
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
         });
     }
 

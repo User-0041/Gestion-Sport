@@ -21,6 +21,8 @@ return new class extends Migration
             $table->string('photo');
             $table->integer('score')->default(0)->unsigned();
             $table->timestamps();
+            $table->foreignId('categorie_id')->nullable()->constrained()->cascadeOnDelete();
+            $table->foreignId('team_id')->nullable()->constrained()->nullOnDelete();
         });
     }
 
