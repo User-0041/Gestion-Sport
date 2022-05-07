@@ -17,7 +17,9 @@ class AthletFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'nom'=> $this->faker->firstName(),
+            'prenom'=> $this->faker->lastName(),
+            'photo'=> $this->faker->imageUrl(360,360,true)
         ];
     }
 }

@@ -21,8 +21,8 @@ return new class extends Migration
             $table->string('poster');
             $table->date('dateDebut');
             $table->date('dateFin');
-            $table->timestamps();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->timestamps();
         });
     }
 

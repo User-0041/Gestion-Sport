@@ -13,13 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('categories', function (Blueprint $table) {
+        Schema::create('comantables', function (Blueprint $table) {
             $table->id();
-            $table->string('nom',100);
-            $table->enum('sexe',['HOMME','FEMME']);
-            $table->string('poids',20);
+            $table->text('body');
+            $table->timestamp('dateAjout');
+            $table->unsignedBigInteger('comantables_id');
+            $table->String('comantables_type');
             $table->timestamps();
-            $table->foreignId('sports_events_id')->constrained()->cascadeOnDelete();
         });
     }
 
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('categories');
+        Schema::dropIfExists('comantables');
     }
 };

@@ -13,5 +13,9 @@ class SportsEvent extends Model
         {
             return $this->belongsTo(User::class);
         }
+
+        public function comantable(){
+            return$this->morphMany(comantable::class,'comantable');
+        }
 }
 

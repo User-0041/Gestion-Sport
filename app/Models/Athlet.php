@@ -10,6 +10,11 @@ class Athlet extends Model
     use HasFactory;
     public function categorie()
     {
-        return $this->belongsto(Categorie::class);
+        return $this->hasMany(Categorie::class);
     }
+
+    public function athletes(){
+        return$this->hasManyThrough(Athlete::class,Categorie::class);}
+
+        public function comantable(){return$this->morphMany(comantable::class, 'comantable');}
 }
